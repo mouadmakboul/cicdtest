@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   mouad-java:
+
     build: .
     container_name: mouad-java-container
     ports:
-      - "1015:8080"
+      - "1015:1005"
     networks:
       - mouad-net
-    volumes:
-      - ./logs:/app/logs
+
     depends_on:
       - postgres-sql
 
@@ -21,7 +21,7 @@ services:
       POSTGRES_USER: username
       POSTGRES_DB: mouad-demo
     ports:
-      - "1001:5050"
+      - "5432:5432"
     networks:
       - mouad-net
 
